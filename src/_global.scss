@@ -1,0 +1,24 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	background-color: #112;
+	color: white;
+	text-align: center;
+	line-height: 1.5;
+	padding-inline: 10px;
+}
+
+h1 {
+	padding: 30px 0px;
+	font-weight: 400;
+}
+
+a {
+	color: yellow;
+	text-underline-offset: 2px;
+}

@@ -1,0 +1,23 @@
+@import "variables";
+
+#board {
+	margin-block: 30px;
+	display: inline-grid;
+	width: min(90vmin, 380px);
+	height: min(90vmin, 380px);
+	grid-template-columns: repeat(#{$size-x}, 1fr);
+	grid-template-rows: repeat(#{$size-y}, 1fr);
+	gap: 8px;
+
+	label {
+		transition: background-color 200ms ease;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+
+	input[type="checkbox"] {
+		opacity: 0;
+		position: absolute;
+		left: -100vw;
+	}
+}

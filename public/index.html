@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Lights Out</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<p id="warning">
+			This demo uses the
+			<a
+				href="https://developer.mozilla.org/en-US/docs/Web/CSS/:has"
+				target="_blank"
+				>:has selector</a
+			>. It seems that your browser does not support it. You can
+			check
+			<a
+				href="https://caniuse.com/?search=%3Ahas"
+				target="_blank"
+				>caniuse</a
+			>
+			for more info about browser support.
+		</p>
+		<h1>Lights Out</h1>
+		<p class="info">
+			This is
+			<a
+				href="https://en.wikipedia.org/wiki/Lights_Out_(game)"
+				target="_blank"
+				>Lights Out</a
+			>
+			as a browser game, written with HTML and CSS only. No
+			JavaScript is required!<br />Your goal is to turn off all
+			lights. The catch is that each time you toggle a light all
+			the neighbors are toggled as well.
+		</p>
+		<form id="game">
+			<main id="board">
+				<label for="c11">
+					<input type="checkbox" id="c11" />
+				</label>
+				<label for="c12">
+					<input type="checkbox" id="c12" />
+				</label>
+				<label for="c13">
+					<input type="checkbox" id="c13" />
+				</label>
+				<label for="c14">
+					<input type="checkbox" id="c14" />
+				</label>
+				<label for="c15">
+					<input type="checkbox" id="c15" />
+				</label>
+
+				<label for="c21">
+					<input type="checkbox" id="c21" />
+				</label>
+				<label for="c22">
+					<input type="checkbox" id="c22" />
+				</label>
+				<label for="c23">
+					<input type="checkbox" id="c23" />
+				</label>
+				<label for="c24">
+					<input type="checkbox" id="c24" />
+				</label>
+				<label for="c25">
+					<input type="checkbox" id="c25" />
+				</label>
+
+				<label for="c31">
+					<input type="checkbox" id="c31" />
+				</label>
+				<label for="c32">
+					<input type="checkbox" id="c32" />
+				</label>
+				<label for="c33">
+					<input type="checkbox" id="c33" />
+				</label>
+				<label for="c34">
+					<input type="checkbox" id="c34" />
+				</label>
+				<label for="c35">
+					<input type="checkbox" id="c35" />
+				</label>
+
+				<label for="c41">
+					<input type="checkbox" id="c41" />
+				</label>
+				<label for="c42">
+					<input type="checkbox" id="c42" />
+				</label>
+				<label for="c43">
+					<input type="checkbox" id="c43" />
+				</label>
+				<label for="c44">
+					<input type="checkbox" id="c44" />
+				</label>
+				<label for="c45">
+					<input type="checkbox" id="c45" />
+				</label>
+
+				<label for="c51">
+					<input type="checkbox" id="c51" />
+				</label>
+				<label for="c52">
+					<input type="checkbox" id="c52" />
+				</label>
+				<label for="c53">
+					<input type="checkbox" id="c53" />
+				</label>
+				<label for="c54">
+					<input type="checkbox" id="c54" />
+				</label>
+				<label for="c55">
+					<input type="checkbox" id="c55" />
+				</label>
+			</main>
+
+			<menu>
+				<button type="reset">Reset</button>
+			</menu>
+
+			<p id="solved">The game is solved! 🎉</p>
+		</form>
+	</body>
+</html>

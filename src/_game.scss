@@ -1,0 +1,89 @@
+@use "sass:list";
+@import "variables";
+
+// computes the list of neighbors at some coordinate
+@function neighbors($i, $j) {
+	$list: ();
+	$list: append($list, ($i, $j));
+	@if ($i > 1) {
+		$list: append($list, ($i - 1, $j));
+	}
+	@if ($j > 1) {
+		$list: append($list, ($i, $j - 1));
+	}
+	@if ($i < $size-x) {
+		$list: append($list, ($i + 1, $j));
+	}
+	@if ($j < $size-y) {
+		$list: append($list, ($i, $j + 1));
+	}
+	@return $list;
+}
+
+#game {
+	@supports not (selector(:has(*))) {
+		display: none;
+	}
+
+	// counter for lights
+	$index: 0;
+
+	// loop through all lights
+	@for $i from 1 through $size-x {
+		@for $j from 1 through $size-y {
+			$index: $index + 1;
+			// counter for neighbors of light
+			$n: 0;
+
+			@each $neighbor in neighbors($i, $j) {
+				$x: nth($neighbor, 1);
+				$y: nth($neighbor, 2);
+				$n: $n + 1;
+
+				// add 1 modulo 2 when neighbor is checked
+				&:has(#c#{$x}#{$y}:checked) {
+					@if ($n == 1) {
+						--s#{$i}#{$j}#{$n}: 1;
+					} @else {
+						--s#{$i}#{$j}#{$n}: calc(
+							1 - var(--s#{$i}#{$j}#{$n - 1})
+						);
+					}
+				}
+
+				// add 0 modulo 2 when neighbor is not checked
+				&:has(#c#{$x}#{$y}:not(:checked)) {
+					@if ($n == 1) {
+						--s#{$i}#{$j}#{$n}: 0;
+					} @else {
+						--s#{$i}#{$j}#{$n}: var(
+							--s#{$i}#{$j}#{$n - 1}
+						);
+					}
+				}
+			}
+
+			// state = total sum modulo 2
+			--s#{$i}#{$j}: var(--s#{$i}#{$j}#{$n});
+
+			// set label color according to state
+			label[for="c#{$i}#{$j}"] {
+				background-color: hsl(
+					60,
+					calc(100% - var(--s#{$i}#{$j}) * 100%),
+					calc(60% - var(--s#{$i}#{$j}) * 30%)
+				);
+			}
+
+			// compute the total sum of all states
+			// (game is solved when all states = 1)
+			@if ($index > 1) {
+				--total-#{$index}: calc(
+					var(--total-#{$index - 1}) + var(--s#{$i}#{$j})
+				);
+			} @else {
+				--total-#{$index}: var(--s#{$i}#{$j});
+			}
+		}
+	}
+}

@@ -1,0 +1,16 @@
+button {
+	font-family: inherit;
+	font-size: inherit;
+	border: none;
+	outline: none;
+	background-color: darkslateblue;
+	color: white;
+	padding: 6px 12px;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+button:hover,
+button:focus-visible {
+	filter: brightness(1.2);
+}

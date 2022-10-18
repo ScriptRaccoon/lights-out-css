@@ -1,0 +1,9 @@
+#warning {
+	padding: 20px;
+	margin: 10px;
+	font-size: 20px;
+	border: 2px solid orange;
+	@supports (selector(:has(*))) {
+		display: none;
+	}
+}

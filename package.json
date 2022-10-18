@@ -1,0 +1,16 @@
+{
+  "name": "lights-out-css",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "sass src/style.scss public/style.css --watch",
+    "build": "sass src/style.scss public/style.css --style=compressed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.55.0"
+  }
+}
