@@ -1,7 +1,7 @@
 @import "variables";
 
 #solved {
-	opacity: calc(var(--total-#{$amount}) - #{$amount} + 1);
+	opacity: calc(1 - var(--total-#{$amount}));
 	margin-block: 20px;
 	font-size: 24px;
 	transition: opacity 100ms ease-out;
