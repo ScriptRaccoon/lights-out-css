@@ -1,7 +1,8 @@
 @use "sass:list";
 @import "variables";
 
-// computes the list of neighbors at some coordinate
+// computes the list of valid neighbors at some coordinate
+// including the coordinate itself
 @function neighbors($i, $j) {
 	$list: ();
 	$list: append($list, ($i, $j));
@@ -69,7 +70,9 @@
 			// state = total sum modulo 2
 			--s#{$i}#{$j}: var(--s#{$i}#{$j}#{$n});
 
-			// set label color according to state
+			// set label color according to state,
+			// state = 0 becomes gray,
+			// state = 1 becomes yellow
 			label[for="c#{$i}#{$j}"] {
 				background-color: hsl(
 					60,
@@ -78,8 +81,8 @@
 				);
 			}
 
-			// compute the total sum of all states
-			// (game is solved when all states = 0)
+			// compute the total sum of all states,
+			// game is solved when all states = 0
 			@if ($index > 1) {
 				--total-#{$index}: calc(
 					var(--total-#{$index - 1}) + var(--s#{$i}#{$j})
