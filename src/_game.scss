@@ -81,14 +81,15 @@
 				);
 			}
 
-			// compute the total sum of all states,
-			// game is solved when all states = 0
+			// compute the maximum of all states,
+			// game is solved when max = 0
 			@if ($index > 1) {
-				--total-#{$index}: calc(
-					var(--total-#{$index - 1}) + var(--s#{$i}#{$j})
+				--max-#{$index}: max(
+					var(--max-#{$index - 1}),
+					var(--s#{$i}#{$j})
 				);
 			} @else {
-				--total-#{$index}: var(--s#{$i}#{$j});
+				--max-#{$index}: var(--s#{$i}#{$j});
 			}
 		}
 	}
