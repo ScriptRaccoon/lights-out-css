@@ -1,0 +1,54 @@
+@import "variables";
+
+$number: 3;
+
+input[type="radio"] {
+	position: absolute;
+	opacity: 0;
+	left: -100vw;
+}
+
+small {
+	display: block;
+	margin-top: 20px;
+}
+
+@for $l from 1 through $number {
+	input[id="level#{$l}"]:checked ~ #game label[for="level#{$l}"] {
+		color: yellow;
+		text-decoration: underline;
+		text-underline-offset: 4px;
+	}
+}
+
+body:has(#level1:checked) #game {
+	@for $i from 1 through $size-x {
+		@for $j from 1 through $size-y {
+			--level#{$i}#{$j}: 1;
+		}
+	}
+}
+
+body:has(#level2:checked) #game {
+	@for $i from 1 through $size-x {
+		@for $j from 1 through $size-y {
+			@if ($i == $j + 1) {
+				--level#{$i}#{$j}: 1;
+			} @else {
+				--level#{$i}#{$j}: 0;
+			}
+		}
+	}
+}
+
+body:has(#level3:checked) #game {
+	@for $i from 1 through $size-x {
+		@for $j from 1 through $size-y {
+			@if ($i == 3 and $j == 3) {
+				--level#{$i}#{$j}: 1;
+			} @else {
+				--level#{$i}#{$j}: 0;
+			}
+		}
+	}
+}

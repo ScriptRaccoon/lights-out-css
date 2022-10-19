@@ -39,6 +39,9 @@
 			lights. The catch is that each time you toggle a light all
 			the neighbors are toggled as well.
 		</p>
+		<input type="radio" checked id="level1" name="levels" />
+		<input type="radio" id="level2" name="levels" />
+		<input type="radio" id="level3" name="levels" />
 		<form id="game">
 			<main id="board">
 				<label for="c11">
@@ -124,9 +127,19 @@
 
 			<menu>
 				<button type="reset">Reset</button>
+				<label for="level1">Level 1</label>
+				<label for="level2">Level 2</label>
+				<label for="level3">Level 3</label>
 			</menu>
+			<small
+				>Before playing the next level, please click
+				'Reset'.</small
+			>
 
-			<p id="solved">The game is solved! 🎉</p>
+			<p id="solved">
+				The level is solved! 🎉
+				<br />
+			</p>
 		</form>
 	</body>
 </html>
