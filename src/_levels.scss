@@ -8,6 +8,11 @@ input[type="radio"] {
 	left: -100vw;
 }
 
+.levelLabel {
+	opacity: 0.8;
+	cursor: pointer;
+}
+
 .resetHint {
 	opacity: 0.8;
 	display: block;
@@ -17,8 +22,7 @@ input[type="radio"] {
 @for $l from 1 through $number {
 	input[id="level#{$l}"]:checked ~ #game label[for="level#{$l}"] {
 		color: yellow;
-		text-decoration: underline;
-		text-underline-offset: 4px;
+		opacity: 1;
 	}
 }
 
