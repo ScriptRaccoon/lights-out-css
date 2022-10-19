@@ -55,3 +55,40 @@ body:has(#level3:checked) #game {
 		}
 	}
 }
+
+body:has(#level4:checked) #game {
+	@for $i from 1 through $size-x {
+		@for $j from 1 through $size-y {
+			@if (
+				($i == 1 or $i == 3 or $i == 5) and
+					($j == 1 or $j == 3 or $j == 5)
+			) {
+				--level#{$i}#{$j}: 1;
+			} @else {
+				--level#{$i}#{$j}: 0;
+			}
+		}
+	}
+}
+
+body:has(#level5:checked) #game {
+	@for $i from 1 through $size-x {
+		@for $j from 1 through $size-y {
+			@if (
+				$i ==
+					1 or
+					$j ==
+					1 or
+					$i ==
+					$size-x or
+					$j ==
+					$size-y -
+					1
+			) {
+				--level#{$i}#{$j}: 1;
+			} @else {
+				--level#{$i}#{$j}: 0;
+			}
+		}
+	}
+}
