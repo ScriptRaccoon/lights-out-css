@@ -14,9 +14,7 @@ input[type="radio"] {
 }
 
 .resetHint {
-	opacity: 0.8;
-	display: block;
-	margin-top: 15px;
+	margin-top: 10px;
 }
 
 @for $l from 1 through $number {
