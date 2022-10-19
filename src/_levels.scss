@@ -8,9 +8,10 @@ input[type="radio"] {
 	left: -100vw;
 }
 
-small {
+.resetHint {
+	opacity: 0.8;
 	display: block;
-	margin-top: 20px;
+	margin-top: 15px;
 }
 
 @for $l from 1 through $number {
