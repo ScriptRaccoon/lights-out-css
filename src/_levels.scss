@@ -19,7 +19,7 @@ input[type="radio"] {
 
 @for $l from 1 through $number {
 	input[id="level#{$l}"]:checked ~ #game label[for="level#{$l}"] {
-		color: yellow;
+		color: $main-color;
 		opacity: 1;
 	}
 }
@@ -71,19 +71,12 @@ body:has(#level4:checked) #game {
 	}
 }
 
+// prettier-ignore
 body:has(#level5:checked) #game {
 	@for $i from 1 through $size-x {
 		@for $j from 1 through $size-y {
-			@if (
-				$i ==
-					1 or
-					$j ==
-					1 or
-					$i ==
-					$size-x or
-					$j ==
-					$size-y -
-					1
+			@if ($i ==1 or $j == 1 or
+				 $i == $size-x or $j == $size-y - 1
 			) {
 				--level#{$i}#{$j}: 1;
 			} @else {

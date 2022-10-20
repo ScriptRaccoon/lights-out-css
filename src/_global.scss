@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -7,7 +9,7 @@
 body {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	background-color: #112;
-	color: white;
+	color: $font-color;
 	text-align: center;
 	line-height: 1.6;
 	padding-inline: 10px;
@@ -19,7 +21,7 @@ h1 {
 }
 
 a {
-	color: yellow;
+	color: $main-color;
 	text-underline-offset: 2px;
 }
 
