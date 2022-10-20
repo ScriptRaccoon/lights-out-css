@@ -284,6 +284,34 @@ body:has(#level5:checked) #game {
   --level55: 1;
 }
 
+body:has(#level6:checked) #game {
+  --level11: 1;
+  --level12: 0;
+  --level13: 1;
+  --level14: 0;
+  --level15: 1;
+  --level21: 0;
+  --level22: 1;
+  --level23: 0;
+  --level24: 1;
+  --level25: 0;
+  --level31: 1;
+  --level32: 0;
+  --level33: 1;
+  --level34: 0;
+  --level35: 1;
+  --level41: 0;
+  --level42: 1;
+  --level43: 0;
+  --level44: 1;
+  --level45: 0;
+  --level51: 1;
+  --level52: 0;
+  --level53: 1;
+  --level54: 0;
+  --level55: 1;
+}
+
 #board {
   display: grid;
   width: min(90vmin, 380px);

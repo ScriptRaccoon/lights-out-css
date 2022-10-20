@@ -1,4 +1,3 @@
 node_modules
 todo.txt
-public/*.css
-public/*.map
+public/css/*

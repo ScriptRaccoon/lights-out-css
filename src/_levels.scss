@@ -88,3 +88,17 @@ body:has(#level5:checked) #game {
 		}
 	}
 }
+
+// prettier-ignore
+body:has(#level6:checked) #game {
+	@for $i from 1 through $size-x {
+		@for $j from 1 through $size-y {
+			@if (($i + $j) % 2 == 0
+			) {
+				--level#{$i}#{$j}: 1;
+			} @else {
+				--level#{$i}#{$j}: 0;
+			}
+		}
+	}
+}
