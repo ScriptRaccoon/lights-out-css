@@ -1,10 +1,9 @@
 @use "variables" as *;
 
 #board {
-	margin-top: 20px;
-	display: inline-grid;
-	width: min(90vmin, 380px);
-	height: min(90vmin, 380px);
+	display: grid;
+	width: $width;
+	height: $width;
 	grid-template-columns: repeat(#{$size-x}, 1fr);
 	grid-template-rows: repeat(#{$size-y}, 1fr);
 	gap: 8px;

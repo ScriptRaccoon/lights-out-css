@@ -8,16 +8,9 @@
 
 body {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	background-color: #112;
+	background-color: $bg-color;
 	color: $font-color;
-	text-align: center;
-	line-height: 1.6;
-	padding-inline: 10px;
-}
-
-h1 {
-	padding: 30px 0px;
-	font-weight: 400;
+	padding: 10px;
 }
 
 a {

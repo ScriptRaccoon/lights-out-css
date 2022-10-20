@@ -1,0 +1,39 @@
+@use "variables" as *;
+
+aside {
+	position: relative;
+	line-height: 1.5;
+
+	details {
+		position: absolute;
+		padding: 10px;
+		top: 0;
+		right: 0;
+		max-width: 450px;
+
+		&[open] {
+			background-color: $secondary-color;
+			border-radius: 4px;
+			box-shadow: 0px 0px 20px #000;
+		}
+	}
+
+	summary {
+		list-style-type: none;
+		cursor: pointer;
+		opacity: 0.6;
+		display: flex;
+		justify-content: flex-end;
+		transition: opacity 120ms linear;
+		&:hover {
+			opacity: 1;
+		}
+		img {
+			height: 20px;
+		}
+	}
+
+	p {
+		margin-top: 10px;
+	}
+}

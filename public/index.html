@@ -11,6 +11,35 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
+		<!-- help section -->
+		<aside>
+			<details>
+				<summary>
+					<img src="./help.svg" />
+				</summary>
+				<p>
+					This is
+					<a
+						href="https://en.wikipedia.org/wiki/Lights_Out_(game)"
+						target="_blank"
+						>Lights Out</a
+					>
+					as a browser game. Your goal is to turn off all
+					lights. The catch is that each time you toggle a
+					light all the neighbors are toggled as well.
+				</p>
+				<p>
+					This game is written with HTML and CSS only. No
+					JavaScript is required! Check out the code over at
+					<a
+						href="https://github.com/ScriptRaccoon/lights-out-css"
+						target="_blank"
+						>GitHub</a
+					>.
+				</p>
+			</details>
+		</aside>
+		<!-- warning for browsers that don't support :has -->
 		<p id="warning">
 			This demo uses the
 			<a
@@ -26,33 +55,19 @@
 			>
 			for more info about browser support.
 		</p>
-		<h1>Lights Out</h1>
-		<p class="info">
-			This is
-			<a
-				href="https://en.wikipedia.org/wiki/Lights_Out_(game)"
-				target="_blank"
-				>Lights Out</a
-			>
-			as a browser game, written with HTML and CSS only. No
-			JavaScript is required! Check out the
-			<a
-				href="https://github.com/ScriptRaccoon/lights-out-css"
-				target="_blank"
-				>code</a
-			>.<br />
-			<small
-				>Your goal is to turn off all lights. The catch is
-				that each time you toggle a light all the neighbors
-				are toggled as well.</small
-			>
-		</p>
+		<!-- header -->
+		<header>
+			<h1>Lights Out</h1>
+		</header>
+		<!-- level radio buttons -->
 		<input type="radio" checked id="level1" name="levels" />
 		<input type="radio" id="level2" name="levels" />
 		<input type="radio" id="level3" name="levels" />
 		<input type="radio" id="level4" name="levels" />
 		<input type="radio" id="level5" name="levels" />
+		<!-- game element -->
 		<form id="game">
+			<!-- board with all lights -->
 			<main id="board">
 				<label for="c11">
 					<input type="checkbox" id="c11" />
@@ -134,9 +149,11 @@
 					<input type="checkbox" id="c55" />
 				</label>
 			</main>
+			<!-- menu with reset button -->
 			<menu>
 				<button type="reset">Reset</button>
 			</menu>
+			<!-- menu for levels -->
 			<menu>
 				<label class="levelLabel" for="level1">Level 1</label>
 				<label class="levelLabel" for="level2">Level 2</label>
@@ -144,11 +161,11 @@
 				<label class="levelLabel" for="level4">Level 4</label>
 				<label class="levelLabel" for="level5">Level 5</label>
 			</menu>
-			<small class="resetHint"
-				>Before playing the next level, please click
-				'Reset'.</small
-			>
-
+			<!-- hint -->
+			<div class="resetHint">
+				Before playing the next level, please click 'Reset'.
+			</div>
+			<!-- solved message -->
 			<p id="solved">
 				The level is solved! 🎉
 				<br />

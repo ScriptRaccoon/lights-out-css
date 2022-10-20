@@ -1,8 +1,11 @@
+@use "variables" as *;
+
 menu {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: 20px;
+	column-gap: 15px;
+	row-gap: 5px;
 	flex-wrap: wrap;
 	padding-top: 20px;
 }
@@ -13,10 +16,11 @@ button {
 	border: none;
 	outline: none;
 	color: inherit;
-	background-color: darkslateblue;
+	background: none;
+	cursor: pointer;
+	background-color: $secondary-color;
 	padding: 6px 12px;
 	border-radius: 3px;
-	cursor: pointer;
 	&:hover,
 	&:focus-visible {
 		filter: brightness(1.2);
