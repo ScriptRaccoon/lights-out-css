@@ -1,6 +1,10 @@
 @use "variables" as *;
 
 aside {
+	@supports (not selector(:has(*))) {
+		display: none;
+	}
+
 	position: relative;
 	line-height: 1.5;
 
