@@ -1,4 +1,4 @@
-@import "variables";
+@use "variables" as *;
 
 // solved message is visible iff maximal state is 0.
 #solved {

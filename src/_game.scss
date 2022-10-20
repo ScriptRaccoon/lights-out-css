@@ -1,5 +1,5 @@
 @use "sass:list";
-@import "variables";
+@use "variables" as *;
 
 // computes the list of valid neighbors at some coordinate
 // including the coordinate itself
