@@ -28,83 +28,83 @@ $level-number: 7;
 	}
 }
 
-body:has(#level1:checked) #game {
-	@for $i from 1 through $size-x {
-		@for $j from 1 through $size-y {
-			--level#{$i}#{$j}: 1;
-		}
-	}
-}
-
-body:has(#level2:checked) #game {
-	@for $i from 1 through $size-x {
-		@for $j from 1 through $size-y {
-			@if ($i == $j + 1) {
-				--level#{$i}#{$j}: 1;
-			} @else {
-				--level#{$i}#{$j}: 0;
+@mixin create-level($name, $coords, $val) {
+	body:has(##{$name}:checked) #game {
+		@for $i from 1 through $size-x {
+			@for $j from 1 through $size-y {
+				@if (index($coords, ($i, $j))) {
+					--level#{$i}#{$j}: #{$val};
+				} @else {
+					--level#{$i}#{$j}: #{1 - $val};
+				}
 			}
 		}
 	}
 }
 
-body:has(#level3:checked) #game {
-	@for $i from 1 through $size-x {
-		@for $j from 1 through $size-y {
-			@if ($i == 3 and $j == 3) {
-				--level#{$i}#{$j}: 1;
-			} @else {
-				--level#{$i}#{$j}: 0;
-			}
-		}
-	}
-}
+@include create-level("level1", (), 0);
 
-body:has(#level4:checked) #game {
-	@for $i from 1 through $size-x {
-		@for $j from 1 through $size-y {
-			@if (
-				($i == 1 or $i == 3 or $i == 5) and
-					($j == 1 or $j == 3 or $j == 5)
-			) {
-				--level#{$i}#{$j}: 1;
-			} @else {
-				--level#{$i}#{$j}: 0;
-			}
-		}
-	}
-}
+@include create-level("level2", ((2, 1), (3, 2), (4, 3), (5, 4)), 1);
 
-// prettier-ignore
-body:has(#level5:checked) #game {
-	@for $i from 1 through $size-x {
-		@for $j from 1 through $size-y {
-			@if ($i ==1 or $j == 1 or
-				 $i == $size-x or $j == $size-y - 1
-			) {
-				--level#{$i}#{$j}: 1;
-			} @else {
-				--level#{$i}#{$j}: 0;
-			}
-		}
-	}
-}
+@include create-level("level3", append((), (3, 3)), 1);
 
-body:has(#level6:checked) #game {
-	@for $i from 1 through $size-x {
-		@for $j from 1 through $size-y {
-			@if (($i + $j) % 2 == 0) {
-				--level#{$i}#{$j}: 1;
-			} @else {
-				--level#{$i}#{$j}: 0;
-			}
-		}
-	}
-}
-
-body:has(#level7:checked) #game {
-	$coords: (
+@include create-level(
+	"level4",
+	(
 		(1, 1),
+		(1, 3),
+		(1, 5),
+		(3, 1),
+		(3, 3),
+		(3, 5),
+		(5, 1),
+		(5, 3),
+		(5, 5)
+	),
+	1
+);
+
+@include create-level(
+	"level5",
+	(
+		(2, 2),
+		(2, 3),
+		(2, 5),
+		(3, 2),
+		(3, 3),
+		(3, 5),
+		(4, 2),
+		(4, 3),
+		(4, 5)
+	),
+	0
+);
+
+@include create-level(
+	"level6",
+	(
+		(1, 1),
+		(1, 3),
+		(1, 5),
+		(2, 2),
+		(2, 4),
+		(3, 1),
+		(3, 3),
+		(3, 5),
+		(4, 2),
+		(4, 4),
+		(5, 1),
+		(5, 3),
+		(5, 5)
+	),
+	1
+);
+
+@include create-level(
+	"level7",
+	(
+		(1, 1),
+		(1, 3),
 		(1, 5),
 		(4, 1),
 		(5, 1),
@@ -112,14 +112,6 @@ body:has(#level7:checked) #game {
 		(4, 5),
 		(5, 4),
 		(5, 5)
-	);
-	@for $i from 1 through $size-x {
-		@for $j from 1 through $size-y {
-			@if (index($coords, ($i, $j))) {
-				--level#{$i}#{$j}: 0;
-			} @else {
-				--level#{$i}#{$j}: 1;
-			}
-		}
-	}
-}
+	),
+	0
+);
