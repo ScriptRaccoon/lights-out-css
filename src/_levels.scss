@@ -1,4 +1,5 @@
 @use "variables" as *;
+@use "sass:math";
 
 input[type="radio"] {
 	position: absolute;
@@ -18,7 +19,7 @@ input[type="radio"] {
 	text-align: center;
 }
 
-$level-number: 5;
+$level-number: 7;
 
 @for $l from 1 through $level-number {
 	input[id="level#{$l}"]:checked ~ #game label[for="level#{$l}"] {
@@ -89,15 +90,35 @@ body:has(#level5:checked) #game {
 	}
 }
 
-// prettier-ignore
 body:has(#level6:checked) #game {
 	@for $i from 1 through $size-x {
 		@for $j from 1 through $size-y {
-			@if (($i + $j) % 2 == 0
-			) {
+			@if (($i + $j) % 2 == 0) {
 				--level#{$i}#{$j}: 1;
 			} @else {
 				--level#{$i}#{$j}: 0;
+			}
+		}
+	}
+}
+
+body:has(#level7:checked) #game {
+	$coords: (
+		(1, 1),
+		(1, 5),
+		(4, 1),
+		(5, 1),
+		(5, 2),
+		(4, 5),
+		(5, 4),
+		(5, 5)
+	);
+	@for $i from 1 through $size-x {
+		@for $j from 1 through $size-y {
+			@if (index($coords, ($i, $j))) {
+				--level#{$i}#{$j}: 0;
+			} @else {
+				--level#{$i}#{$j}: 1;
 			}
 		}
 	}
