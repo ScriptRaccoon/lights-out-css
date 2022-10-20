@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "sass src/style.scss public/style.css --watch",
-    "build": "sass src/style.scss public/style.css --style=compressed"
+    "dev": "sass src/style.scss public/css/style.css --watch",
+    "build": "sass src/style.scss public/css/style.css --style=compressed"
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,1523 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #112;
+  color: white;
+  padding: 10px;
+}
+
+a {
+  color: yellow;
+  text-underline-offset: 2px;
+}
+
+small {
+  opacity: 0.8;
+  display: block;
+}
+
+aside {
+  position: relative;
+  line-height: 1.5;
+}
+aside details {
+  position: absolute;
+  padding: 10px;
+  top: 0;
+  right: 0;
+  max-width: 450px;
+}
+aside details[open] {
+  background-color: darkslateblue;
+  border-radius: 4px;
+  box-shadow: 0px 0px 20px #000;
+}
+aside summary {
+  list-style-type: none;
+  cursor: pointer;
+  opacity: 0.6;
+  display: flex;
+  justify-content: flex-end;
+  transition: opacity 120ms linear;
+}
+aside summary:hover {
+  opacity: 1;
+}
+aside summary img {
+  height: 20px;
+}
+aside p {
+  margin-top: 10px;
+}
+
+#warning {
+  padding: 20px;
+  margin: 10px;
+  font-size: 20px;
+  border: 2px solid orange;
+}
+@supports (selector(:has(*))) {
+  #warning {
+    display: none;
+  }
+}
+
+header {
+  padding-block: 24px;
+}
+header h1 {
+  text-align: center;
+  font-weight: 400;
+}
+
+menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 15px;
+  row-gap: 5px;
+  flex-wrap: wrap;
+  padding-top: 20px;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  background-color: darkslateblue;
+  padding: 6px 12px;
+  border-radius: 3px;
+}
+button:hover, button:focus-visible {
+  filter: brightness(1.2);
+}
+
+input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  left: -100vw;
+}
+
+.levelLabel {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.resetHint {
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0.8;
+  text-align: center;
+}
+
+input[id=level1]:checked ~ #game label[for=level1] {
+  color: yellow;
+  opacity: 1;
+}
+
+input[id=level2]:checked ~ #game label[for=level2] {
+  color: yellow;
+  opacity: 1;
+}
+
+input[id=level3]:checked ~ #game label[for=level3] {
+  color: yellow;
+  opacity: 1;
+}
+
+input[id=level4]:checked ~ #game label[for=level4] {
+  color: yellow;
+  opacity: 1;
+}
+
+input[id=level5]:checked ~ #game label[for=level5] {
+  color: yellow;
+  opacity: 1;
+}
+
+body:has(#level1:checked) #game {
+  --level11: 1;
+  --level12: 1;
+  --level13: 1;
+  --level14: 1;
+  --level15: 1;
+  --level21: 1;
+  --level22: 1;
+  --level23: 1;
+  --level24: 1;
+  --level25: 1;
+  --level31: 1;
+  --level32: 1;
+  --level33: 1;
+  --level34: 1;
+  --level35: 1;
+  --level41: 1;
+  --level42: 1;
+  --level43: 1;
+  --level44: 1;
+  --level45: 1;
+  --level51: 1;
+  --level52: 1;
+  --level53: 1;
+  --level54: 1;
+  --level55: 1;
+}
+
+body:has(#level2:checked) #game {
+  --level11: 0;
+  --level12: 0;
+  --level13: 0;
+  --level14: 0;
+  --level15: 0;
+  --level21: 1;
+  --level22: 0;
+  --level23: 0;
+  --level24: 0;
+  --level25: 0;
+  --level31: 0;
+  --level32: 1;
+  --level33: 0;
+  --level34: 0;
+  --level35: 0;
+  --level41: 0;
+  --level42: 0;
+  --level43: 1;
+  --level44: 0;
+  --level45: 0;
+  --level51: 0;
+  --level52: 0;
+  --level53: 0;
+  --level54: 1;
+  --level55: 0;
+}
+
+body:has(#level3:checked) #game {
+  --level11: 0;
+  --level12: 0;
+  --level13: 0;
+  --level14: 0;
+  --level15: 0;
+  --level21: 0;
+  --level22: 0;
+  --level23: 0;
+  --level24: 0;
+  --level25: 0;
+  --level31: 0;
+  --level32: 0;
+  --level33: 1;
+  --level34: 0;
+  --level35: 0;
+  --level41: 0;
+  --level42: 0;
+  --level43: 0;
+  --level44: 0;
+  --level45: 0;
+  --level51: 0;
+  --level52: 0;
+  --level53: 0;
+  --level54: 0;
+  --level55: 0;
+}
+
+body:has(#level4:checked) #game {
+  --level11: 1;
+  --level12: 0;
+  --level13: 1;
+  --level14: 0;
+  --level15: 1;
+  --level21: 0;
+  --level22: 0;
+  --level23: 0;
+  --level24: 0;
+  --level25: 0;
+  --level31: 1;
+  --level32: 0;
+  --level33: 1;
+  --level34: 0;
+  --level35: 1;
+  --level41: 0;
+  --level42: 0;
+  --level43: 0;
+  --level44: 0;
+  --level45: 0;
+  --level51: 1;
+  --level52: 0;
+  --level53: 1;
+  --level54: 0;
+  --level55: 1;
+}
+
+body:has(#level5:checked) #game {
+  --level11: 1;
+  --level12: 1;
+  --level13: 1;
+  --level14: 1;
+  --level15: 1;
+  --level21: 1;
+  --level22: 0;
+  --level23: 0;
+  --level24: 1;
+  --level25: 0;
+  --level31: 1;
+  --level32: 0;
+  --level33: 0;
+  --level34: 1;
+  --level35: 0;
+  --level41: 1;
+  --level42: 0;
+  --level43: 0;
+  --level44: 1;
+  --level45: 0;
+  --level51: 1;
+  --level52: 1;
+  --level53: 1;
+  --level54: 1;
+  --level55: 1;
+}
+
+#board {
+  display: grid;
+  width: min(90vmin, 380px);
+  height: min(90vmin, 380px);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
+}
+#board label {
+  transition: background-color 200ms ease;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#board input[type=checkbox] {
+  opacity: 0;
+  position: absolute;
+  left: -100vw;
+}
+
+#game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(90vmin, 380px);
+  margin: 0 auto;
+  --s11: var(--s113);
+  --max-1: var(--s11);
+  --s12: var(--s124);
+  --max-2: max(
+  	var(--max-1),
+  	var(--s12)
+  );
+  --s13: var(--s134);
+  --max-3: max(
+  	var(--max-2),
+  	var(--s13)
+  );
+  --s14: var(--s144);
+  --max-4: max(
+  	var(--max-3),
+  	var(--s14)
+  );
+  --s15: var(--s153);
+  --max-5: max(
+  	var(--max-4),
+  	var(--s15)
+  );
+  --s21: var(--s214);
+  --max-6: max(
+  	var(--max-5),
+  	var(--s21)
+  );
+  --s22: var(--s225);
+  --max-7: max(
+  	var(--max-6),
+  	var(--s22)
+  );
+  --s23: var(--s235);
+  --max-8: max(
+  	var(--max-7),
+  	var(--s23)
+  );
+  --s24: var(--s245);
+  --max-9: max(
+  	var(--max-8),
+  	var(--s24)
+  );
+  --s25: var(--s254);
+  --max-10: max(
+  	var(--max-9),
+  	var(--s25)
+  );
+  --s31: var(--s314);
+  --max-11: max(
+  	var(--max-10),
+  	var(--s31)
+  );
+  --s32: var(--s325);
+  --max-12: max(
+  	var(--max-11),
+  	var(--s32)
+  );
+  --s33: var(--s335);
+  --max-13: max(
+  	var(--max-12),
+  	var(--s33)
+  );
+  --s34: var(--s345);
+  --max-14: max(
+  	var(--max-13),
+  	var(--s34)
+  );
+  --s35: var(--s354);
+  --max-15: max(
+  	var(--max-14),
+  	var(--s35)
+  );
+  --s41: var(--s414);
+  --max-16: max(
+  	var(--max-15),
+  	var(--s41)
+  );
+  --s42: var(--s425);
+  --max-17: max(
+  	var(--max-16),
+  	var(--s42)
+  );
+  --s43: var(--s435);
+  --max-18: max(
+  	var(--max-17),
+  	var(--s43)
+  );
+  --s44: var(--s445);
+  --max-19: max(
+  	var(--max-18),
+  	var(--s44)
+  );
+  --s45: var(--s454);
+  --max-20: max(
+  	var(--max-19),
+  	var(--s45)
+  );
+  --s51: var(--s513);
+  --max-21: max(
+  	var(--max-20),
+  	var(--s51)
+  );
+  --s52: var(--s524);
+  --max-22: max(
+  	var(--max-21),
+  	var(--s52)
+  );
+  --s53: var(--s534);
+  --max-23: max(
+  	var(--max-22),
+  	var(--s53)
+  );
+  --s54: var(--s544);
+  --max-24: max(
+  	var(--max-23),
+  	var(--s54)
+  );
+  --s55: var(--s553);
+  --max-25: max(
+  	var(--max-24),
+  	var(--s55)
+  );
+}
+@supports not (selector(:has(*))) {
+  #game {
+    display: none;
+  }
+}
+#game:has(#c11:checked) {
+  --s111: calc(
+  	1 - var(--level11)
+  );
+}
+#game:has(#c11:not(:checked)) {
+  --s111: var(--level11);
+}
+#game:has(#c21:checked) {
+  --s112: calc(
+  	1 - var(--s111)
+  );
+}
+#game:has(#c21:not(:checked)) {
+  --s112: var(
+  	--s111
+  );
+}
+#game:has(#c12:checked) {
+  --s113: calc(
+  	1 - var(--s112)
+  );
+}
+#game:has(#c12:not(:checked)) {
+  --s113: var(
+  	--s112
+  );
+}
+#game label[for=c11] {
+  background-color: hsl(60, calc(var(--s11) * 100%), calc(30% + var(--s11) * 30%));
+}
+#game:has(#c12:checked) {
+  --s121: calc(
+  	1 - var(--level12)
+  );
+}
+#game:has(#c12:not(:checked)) {
+  --s121: var(--level12);
+}
+#game:has(#c11:checked) {
+  --s122: calc(
+  	1 - var(--s121)
+  );
+}
+#game:has(#c11:not(:checked)) {
+  --s122: var(
+  	--s121
+  );
+}
+#game:has(#c22:checked) {
+  --s123: calc(
+  	1 - var(--s122)
+  );
+}
+#game:has(#c22:not(:checked)) {
+  --s123: var(
+  	--s122
+  );
+}
+#game:has(#c13:checked) {
+  --s124: calc(
+  	1 - var(--s123)
+  );
+}
+#game:has(#c13:not(:checked)) {
+  --s124: var(
+  	--s123
+  );
+}
+#game label[for=c12] {
+  background-color: hsl(60, calc(var(--s12) * 100%), calc(30% + var(--s12) * 30%));
+}
+#game:has(#c13:checked) {
+  --s131: calc(
+  	1 - var(--level13)
+  );
+}
+#game:has(#c13:not(:checked)) {
+  --s131: var(--level13);
+}
+#game:has(#c12:checked) {
+  --s132: calc(
+  	1 - var(--s131)
+  );
+}
+#game:has(#c12:not(:checked)) {
+  --s132: var(
+  	--s131
+  );
+}
+#game:has(#c23:checked) {
+  --s133: calc(
+  	1 - var(--s132)
+  );
+}
+#game:has(#c23:not(:checked)) {
+  --s133: var(
+  	--s132
+  );
+}
+#game:has(#c14:checked) {
+  --s134: calc(
+  	1 - var(--s133)
+  );
+}
+#game:has(#c14:not(:checked)) {
+  --s134: var(
+  	--s133
+  );
+}
+#game label[for=c13] {
+  background-color: hsl(60, calc(var(--s13) * 100%), calc(30% + var(--s13) * 30%));
+}
+#game:has(#c14:checked) {
+  --s141: calc(
+  	1 - var(--level14)
+  );
+}
+#game:has(#c14:not(:checked)) {
+  --s141: var(--level14);
+}
+#game:has(#c13:checked) {
+  --s142: calc(
+  	1 - var(--s141)
+  );
+}
+#game:has(#c13:not(:checked)) {
+  --s142: var(
+  	--s141
+  );
+}
+#game:has(#c24:checked) {
+  --s143: calc(
+  	1 - var(--s142)
+  );
+}
+#game:has(#c24:not(:checked)) {
+  --s143: var(
+  	--s142
+  );
+}
+#game:has(#c15:checked) {
+  --s144: calc(
+  	1 - var(--s143)
+  );
+}
+#game:has(#c15:not(:checked)) {
+  --s144: var(
+  	--s143
+  );
+}
+#game label[for=c14] {
+  background-color: hsl(60, calc(var(--s14) * 100%), calc(30% + var(--s14) * 30%));
+}
+#game:has(#c15:checked) {
+  --s151: calc(
+  	1 - var(--level15)
+  );
+}
+#game:has(#c15:not(:checked)) {
+  --s151: var(--level15);
+}
+#game:has(#c14:checked) {
+  --s152: calc(
+  	1 - var(--s151)
+  );
+}
+#game:has(#c14:not(:checked)) {
+  --s152: var(
+  	--s151
+  );
+}
+#game:has(#c25:checked) {
+  --s153: calc(
+  	1 - var(--s152)
+  );
+}
+#game:has(#c25:not(:checked)) {
+  --s153: var(
+  	--s152
+  );
+}
+#game label[for=c15] {
+  background-color: hsl(60, calc(var(--s15) * 100%), calc(30% + var(--s15) * 30%));
+}
+#game:has(#c21:checked) {
+  --s211: calc(
+  	1 - var(--level21)
+  );
+}
+#game:has(#c21:not(:checked)) {
+  --s211: var(--level21);
+}
+#game:has(#c11:checked) {
+  --s212: calc(
+  	1 - var(--s211)
+  );
+}
+#game:has(#c11:not(:checked)) {
+  --s212: var(
+  	--s211
+  );
+}
+#game:has(#c31:checked) {
+  --s213: calc(
+  	1 - var(--s212)
+  );
+}
+#game:has(#c31:not(:checked)) {
+  --s213: var(
+  	--s212
+  );
+}
+#game:has(#c22:checked) {
+  --s214: calc(
+  	1 - var(--s213)
+  );
+}
+#game:has(#c22:not(:checked)) {
+  --s214: var(
+  	--s213
+  );
+}
+#game label[for=c21] {
+  background-color: hsl(60, calc(var(--s21) * 100%), calc(30% + var(--s21) * 30%));
+}
+#game:has(#c22:checked) {
+  --s221: calc(
+  	1 - var(--level22)
+  );
+}
+#game:has(#c22:not(:checked)) {
+  --s221: var(--level22);
+}
+#game:has(#c12:checked) {
+  --s222: calc(
+  	1 - var(--s221)
+  );
+}
+#game:has(#c12:not(:checked)) {
+  --s222: var(
+  	--s221
+  );
+}
+#game:has(#c21:checked) {
+  --s223: calc(
+  	1 - var(--s222)
+  );
+}
+#game:has(#c21:not(:checked)) {
+  --s223: var(
+  	--s222
+  );
+}
+#game:has(#c32:checked) {
+  --s224: calc(
+  	1 - var(--s223)
+  );
+}
+#game:has(#c32:not(:checked)) {
+  --s224: var(
+  	--s223
+  );
+}
+#game:has(#c23:checked) {
+  --s225: calc(
+  	1 - var(--s224)
+  );
+}
+#game:has(#c23:not(:checked)) {
+  --s225: var(
+  	--s224
+  );
+}
+#game label[for=c22] {
+  background-color: hsl(60, calc(var(--s22) * 100%), calc(30% + var(--s22) * 30%));
+}
+#game:has(#c23:checked) {
+  --s231: calc(
+  	1 - var(--level23)
+  );
+}
+#game:has(#c23:not(:checked)) {
+  --s231: var(--level23);
+}
+#game:has(#c13:checked) {
+  --s232: calc(
+  	1 - var(--s231)
+  );
+}
+#game:has(#c13:not(:checked)) {
+  --s232: var(
+  	--s231
+  );
+}
+#game:has(#c22:checked) {
+  --s233: calc(
+  	1 - var(--s232)
+  );
+}
+#game:has(#c22:not(:checked)) {
+  --s233: var(
+  	--s232
+  );
+}
+#game:has(#c33:checked) {
+  --s234: calc(
+  	1 - var(--s233)
+  );
+}
+#game:has(#c33:not(:checked)) {
+  --s234: var(
+  	--s233
+  );
+}
+#game:has(#c24:checked) {
+  --s235: calc(
+  	1 - var(--s234)
+  );
+}
+#game:has(#c24:not(:checked)) {
+  --s235: var(
+  	--s234
+  );
+}
+#game label[for=c23] {
+  background-color: hsl(60, calc(var(--s23) * 100%), calc(30% + var(--s23) * 30%));
+}
+#game:has(#c24:checked) {
+  --s241: calc(
+  	1 - var(--level24)
+  );
+}
+#game:has(#c24:not(:checked)) {
+  --s241: var(--level24);
+}
+#game:has(#c14:checked) {
+  --s242: calc(
+  	1 - var(--s241)
+  );
+}
+#game:has(#c14:not(:checked)) {
+  --s242: var(
+  	--s241
+  );
+}
+#game:has(#c23:checked) {
+  --s243: calc(
+  	1 - var(--s242)
+  );
+}
+#game:has(#c23:not(:checked)) {
+  --s243: var(
+  	--s242
+  );
+}
+#game:has(#c34:checked) {
+  --s244: calc(
+  	1 - var(--s243)
+  );
+}
+#game:has(#c34:not(:checked)) {
+  --s244: var(
+  	--s243
+  );
+}
+#game:has(#c25:checked) {
+  --s245: calc(
+  	1 - var(--s244)
+  );
+}
+#game:has(#c25:not(:checked)) {
+  --s245: var(
+  	--s244
+  );
+}
+#game label[for=c24] {
+  background-color: hsl(60, calc(var(--s24) * 100%), calc(30% + var(--s24) * 30%));
+}
+#game:has(#c25:checked) {
+  --s251: calc(
+  	1 - var(--level25)
+  );
+}
+#game:has(#c25:not(:checked)) {
+  --s251: var(--level25);
+}
+#game:has(#c15:checked) {
+  --s252: calc(
+  	1 - var(--s251)
+  );
+}
+#game:has(#c15:not(:checked)) {
+  --s252: var(
+  	--s251
+  );
+}
+#game:has(#c24:checked) {
+  --s253: calc(
+  	1 - var(--s252)
+  );
+}
+#game:has(#c24:not(:checked)) {
+  --s253: var(
+  	--s252
+  );
+}
+#game:has(#c35:checked) {
+  --s254: calc(
+  	1 - var(--s253)
+  );
+}
+#game:has(#c35:not(:checked)) {
+  --s254: var(
+  	--s253
+  );
+}
+#game label[for=c25] {
+  background-color: hsl(60, calc(var(--s25) * 100%), calc(30% + var(--s25) * 30%));
+}
+#game:has(#c31:checked) {
+  --s311: calc(
+  	1 - var(--level31)
+  );
+}
+#game:has(#c31:not(:checked)) {
+  --s311: var(--level31);
+}
+#game:has(#c21:checked) {
+  --s312: calc(
+  	1 - var(--s311)
+  );
+}
+#game:has(#c21:not(:checked)) {
+  --s312: var(
+  	--s311
+  );
+}
+#game:has(#c41:checked) {
+  --s313: calc(
+  	1 - var(--s312)
+  );
+}
+#game:has(#c41:not(:checked)) {
+  --s313: var(
+  	--s312
+  );
+}
+#game:has(#c32:checked) {
+  --s314: calc(
+  	1 - var(--s313)
+  );
+}
+#game:has(#c32:not(:checked)) {
+  --s314: var(
+  	--s313
+  );
+}
+#game label[for=c31] {
+  background-color: hsl(60, calc(var(--s31) * 100%), calc(30% + var(--s31) * 30%));
+}
+#game:has(#c32:checked) {
+  --s321: calc(
+  	1 - var(--level32)
+  );
+}
+#game:has(#c32:not(:checked)) {
+  --s321: var(--level32);
+}
+#game:has(#c22:checked) {
+  --s322: calc(
+  	1 - var(--s321)
+  );
+}
+#game:has(#c22:not(:checked)) {
+  --s322: var(
+  	--s321
+  );
+}
+#game:has(#c31:checked) {
+  --s323: calc(
+  	1 - var(--s322)
+  );
+}
+#game:has(#c31:not(:checked)) {
+  --s323: var(
+  	--s322
+  );
+}
+#game:has(#c42:checked) {
+  --s324: calc(
+  	1 - var(--s323)
+  );
+}
+#game:has(#c42:not(:checked)) {
+  --s324: var(
+  	--s323
+  );
+}
+#game:has(#c33:checked) {
+  --s325: calc(
+  	1 - var(--s324)
+  );
+}
+#game:has(#c33:not(:checked)) {
+  --s325: var(
+  	--s324
+  );
+}
+#game label[for=c32] {
+  background-color: hsl(60, calc(var(--s32) * 100%), calc(30% + var(--s32) * 30%));
+}
+#game:has(#c33:checked) {
+  --s331: calc(
+  	1 - var(--level33)
+  );
+}
+#game:has(#c33:not(:checked)) {
+  --s331: var(--level33);
+}
+#game:has(#c23:checked) {
+  --s332: calc(
+  	1 - var(--s331)
+  );
+}
+#game:has(#c23:not(:checked)) {
+  --s332: var(
+  	--s331
+  );
+}
+#game:has(#c32:checked) {
+  --s333: calc(
+  	1 - var(--s332)
+  );
+}
+#game:has(#c32:not(:checked)) {
+  --s333: var(
+  	--s332
+  );
+}
+#game:has(#c43:checked) {
+  --s334: calc(
+  	1 - var(--s333)
+  );
+}
+#game:has(#c43:not(:checked)) {
+  --s334: var(
+  	--s333
+  );
+}
+#game:has(#c34:checked) {
+  --s335: calc(
+  	1 - var(--s334)
+  );
+}
+#game:has(#c34:not(:checked)) {
+  --s335: var(
+  	--s334
+  );
+}
+#game label[for=c33] {
+  background-color: hsl(60, calc(var(--s33) * 100%), calc(30% + var(--s33) * 30%));
+}
+#game:has(#c34:checked) {
+  --s341: calc(
+  	1 - var(--level34)
+  );
+}
+#game:has(#c34:not(:checked)) {
+  --s341: var(--level34);
+}
+#game:has(#c24:checked) {
+  --s342: calc(
+  	1 - var(--s341)
+  );
+}
+#game:has(#c24:not(:checked)) {
+  --s342: var(
+  	--s341
+  );
+}
+#game:has(#c33:checked) {
+  --s343: calc(
+  	1 - var(--s342)
+  );
+}
+#game:has(#c33:not(:checked)) {
+  --s343: var(
+  	--s342
+  );
+}
+#game:has(#c44:checked) {
+  --s344: calc(
+  	1 - var(--s343)
+  );
+}
+#game:has(#c44:not(:checked)) {
+  --s344: var(
+  	--s343
+  );
+}
+#game:has(#c35:checked) {
+  --s345: calc(
+  	1 - var(--s344)
+  );
+}
+#game:has(#c35:not(:checked)) {
+  --s345: var(
+  	--s344
+  );
+}
+#game label[for=c34] {
+  background-color: hsl(60, calc(var(--s34) * 100%), calc(30% + var(--s34) * 30%));
+}
+#game:has(#c35:checked) {
+  --s351: calc(
+  	1 - var(--level35)
+  );
+}
+#game:has(#c35:not(:checked)) {
+  --s351: var(--level35);
+}
+#game:has(#c25:checked) {
+  --s352: calc(
+  	1 - var(--s351)
+  );
+}
+#game:has(#c25:not(:checked)) {
+  --s352: var(
+  	--s351
+  );
+}
+#game:has(#c34:checked) {
+  --s353: calc(
+  	1 - var(--s352)
+  );
+}
+#game:has(#c34:not(:checked)) {
+  --s353: var(
+  	--s352
+  );
+}
+#game:has(#c45:checked) {
+  --s354: calc(
+  	1 - var(--s353)
+  );
+}
+#game:has(#c45:not(:checked)) {
+  --s354: var(
+  	--s353
+  );
+}
+#game label[for=c35] {
+  background-color: hsl(60, calc(var(--s35) * 100%), calc(30% + var(--s35) * 30%));
+}
+#game:has(#c41:checked) {
+  --s411: calc(
+  	1 - var(--level41)
+  );
+}
+#game:has(#c41:not(:checked)) {
+  --s411: var(--level41);
+}
+#game:has(#c31:checked) {
+  --s412: calc(
+  	1 - var(--s411)
+  );
+}
+#game:has(#c31:not(:checked)) {
+  --s412: var(
+  	--s411
+  );
+}
+#game:has(#c51:checked) {
+  --s413: calc(
+  	1 - var(--s412)
+  );
+}
+#game:has(#c51:not(:checked)) {
+  --s413: var(
+  	--s412
+  );
+}
+#game:has(#c42:checked) {
+  --s414: calc(
+  	1 - var(--s413)
+  );
+}
+#game:has(#c42:not(:checked)) {
+  --s414: var(
+  	--s413
+  );
+}
+#game label[for=c41] {
+  background-color: hsl(60, calc(var(--s41) * 100%), calc(30% + var(--s41) * 30%));
+}
+#game:has(#c42:checked) {
+  --s421: calc(
+  	1 - var(--level42)
+  );
+}
+#game:has(#c42:not(:checked)) {
+  --s421: var(--level42);
+}
+#game:has(#c32:checked) {
+  --s422: calc(
+  	1 - var(--s421)
+  );
+}
+#game:has(#c32:not(:checked)) {
+  --s422: var(
+  	--s421
+  );
+}
+#game:has(#c41:checked) {
+  --s423: calc(
+  	1 - var(--s422)
+  );
+}
+#game:has(#c41:not(:checked)) {
+  --s423: var(
+  	--s422
+  );
+}
+#game:has(#c52:checked) {
+  --s424: calc(
+  	1 - var(--s423)
+  );
+}
+#game:has(#c52:not(:checked)) {
+  --s424: var(
+  	--s423
+  );
+}
+#game:has(#c43:checked) {
+  --s425: calc(
+  	1 - var(--s424)
+  );
+}
+#game:has(#c43:not(:checked)) {
+  --s425: var(
+  	--s424
+  );
+}
+#game label[for=c42] {
+  background-color: hsl(60, calc(var(--s42) * 100%), calc(30% + var(--s42) * 30%));
+}
+#game:has(#c43:checked) {
+  --s431: calc(
+  	1 - var(--level43)
+  );
+}
+#game:has(#c43:not(:checked)) {
+  --s431: var(--level43);
+}
+#game:has(#c33:checked) {
+  --s432: calc(
+  	1 - var(--s431)
+  );
+}
+#game:has(#c33:not(:checked)) {
+  --s432: var(
+  	--s431
+  );
+}
+#game:has(#c42:checked) {
+  --s433: calc(
+  	1 - var(--s432)
+  );
+}
+#game:has(#c42:not(:checked)) {
+  --s433: var(
+  	--s432
+  );
+}
+#game:has(#c53:checked) {
+  --s434: calc(
+  	1 - var(--s433)
+  );
+}
+#game:has(#c53:not(:checked)) {
+  --s434: var(
+  	--s433
+  );
+}
+#game:has(#c44:checked) {
+  --s435: calc(
+  	1 - var(--s434)
+  );
+}
+#game:has(#c44:not(:checked)) {
+  --s435: var(
+  	--s434
+  );
+}
+#game label[for=c43] {
+  background-color: hsl(60, calc(var(--s43) * 100%), calc(30% + var(--s43) * 30%));
+}
+#game:has(#c44:checked) {
+  --s441: calc(
+  	1 - var(--level44)
+  );
+}
+#game:has(#c44:not(:checked)) {
+  --s441: var(--level44);
+}
+#game:has(#c34:checked) {
+  --s442: calc(
+  	1 - var(--s441)
+  );
+}
+#game:has(#c34:not(:checked)) {
+  --s442: var(
+  	--s441
+  );
+}
+#game:has(#c43:checked) {
+  --s443: calc(
+  	1 - var(--s442)
+  );
+}
+#game:has(#c43:not(:checked)) {
+  --s443: var(
+  	--s442
+  );
+}
+#game:has(#c54:checked) {
+  --s444: calc(
+  	1 - var(--s443)
+  );
+}
+#game:has(#c54:not(:checked)) {
+  --s444: var(
+  	--s443
+  );
+}
+#game:has(#c45:checked) {
+  --s445: calc(
+  	1 - var(--s444)
+  );
+}
+#game:has(#c45:not(:checked)) {
+  --s445: var(
+  	--s444
+  );
+}
+#game label[for=c44] {
+  background-color: hsl(60, calc(var(--s44) * 100%), calc(30% + var(--s44) * 30%));
+}
+#game:has(#c45:checked) {
+  --s451: calc(
+  	1 - var(--level45)
+  );
+}
+#game:has(#c45:not(:checked)) {
+  --s451: var(--level45);
+}
+#game:has(#c35:checked) {
+  --s452: calc(
+  	1 - var(--s451)
+  );
+}
+#game:has(#c35:not(:checked)) {
+  --s452: var(
+  	--s451
+  );
+}
+#game:has(#c44:checked) {
+  --s453: calc(
+  	1 - var(--s452)
+  );
+}
+#game:has(#c44:not(:checked)) {
+  --s453: var(
+  	--s452
+  );
+}
+#game:has(#c55:checked) {
+  --s454: calc(
+  	1 - var(--s453)
+  );
+}
+#game:has(#c55:not(:checked)) {
+  --s454: var(
+  	--s453
+  );
+}
+#game label[for=c45] {
+  background-color: hsl(60, calc(var(--s45) * 100%), calc(30% + var(--s45) * 30%));
+}
+#game:has(#c51:checked) {
+  --s511: calc(
+  	1 - var(--level51)
+  );
+}
+#game:has(#c51:not(:checked)) {
+  --s511: var(--level51);
+}
+#game:has(#c41:checked) {
+  --s512: calc(
+  	1 - var(--s511)
+  );
+}
+#game:has(#c41:not(:checked)) {
+  --s512: var(
+  	--s511
+  );
+}
+#game:has(#c52:checked) {
+  --s513: calc(
+  	1 - var(--s512)
+  );
+}
+#game:has(#c52:not(:checked)) {
+  --s513: var(
+  	--s512
+  );
+}
+#game label[for=c51] {
+  background-color: hsl(60, calc(var(--s51) * 100%), calc(30% + var(--s51) * 30%));
+}
+#game:has(#c52:checked) {
+  --s521: calc(
+  	1 - var(--level52)
+  );
+}
+#game:has(#c52:not(:checked)) {
+  --s521: var(--level52);
+}
+#game:has(#c42:checked) {
+  --s522: calc(
+  	1 - var(--s521)
+  );
+}
+#game:has(#c42:not(:checked)) {
+  --s522: var(
+  	--s521
+  );
+}
+#game:has(#c51:checked) {
+  --s523: calc(
+  	1 - var(--s522)
+  );
+}
+#game:has(#c51:not(:checked)) {
+  --s523: var(
+  	--s522
+  );
+}
+#game:has(#c53:checked) {
+  --s524: calc(
+  	1 - var(--s523)
+  );
+}
+#game:has(#c53:not(:checked)) {
+  --s524: var(
+  	--s523
+  );
+}
+#game label[for=c52] {
+  background-color: hsl(60, calc(var(--s52) * 100%), calc(30% + var(--s52) * 30%));
+}
+#game:has(#c53:checked) {
+  --s531: calc(
+  	1 - var(--level53)
+  );
+}
+#game:has(#c53:not(:checked)) {
+  --s531: var(--level53);
+}
+#game:has(#c43:checked) {
+  --s532: calc(
+  	1 - var(--s531)
+  );
+}
+#game:has(#c43:not(:checked)) {
+  --s532: var(
+  	--s531
+  );
+}
+#game:has(#c52:checked) {
+  --s533: calc(
+  	1 - var(--s532)
+  );
+}
+#game:has(#c52:not(:checked)) {
+  --s533: var(
+  	--s532
+  );
+}
+#game:has(#c54:checked) {
+  --s534: calc(
+  	1 - var(--s533)
+  );
+}
+#game:has(#c54:not(:checked)) {
+  --s534: var(
+  	--s533
+  );
+}
+#game label[for=c53] {
+  background-color: hsl(60, calc(var(--s53) * 100%), calc(30% + var(--s53) * 30%));
+}
+#game:has(#c54:checked) {
+  --s541: calc(
+  	1 - var(--level54)
+  );
+}
+#game:has(#c54:not(:checked)) {
+  --s541: var(--level54);
+}
+#game:has(#c44:checked) {
+  --s542: calc(
+  	1 - var(--s541)
+  );
+}
+#game:has(#c44:not(:checked)) {
+  --s542: var(
+  	--s541
+  );
+}
+#game:has(#c53:checked) {
+  --s543: calc(
+  	1 - var(--s542)
+  );
+}
+#game:has(#c53:not(:checked)) {
+  --s543: var(
+  	--s542
+  );
+}
+#game:has(#c55:checked) {
+  --s544: calc(
+  	1 - var(--s543)
+  );
+}
+#game:has(#c55:not(:checked)) {
+  --s544: var(
+  	--s543
+  );
+}
+#game label[for=c54] {
+  background-color: hsl(60, calc(var(--s54) * 100%), calc(30% + var(--s54) * 30%));
+}
+#game:has(#c55:checked) {
+  --s551: calc(
+  	1 - var(--level55)
+  );
+}
+#game:has(#c55:not(:checked)) {
+  --s551: var(--level55);
+}
+#game:has(#c45:checked) {
+  --s552: calc(
+  	1 - var(--s551)
+  );
+}
+#game:has(#c45:not(:checked)) {
+  --s552: var(
+  	--s551
+  );
+}
+#game:has(#c54:checked) {
+  --s553: calc(
+  	1 - var(--s552)
+  );
+}
+#game:has(#c54:not(:checked)) {
+  --s553: var(
+  	--s552
+  );
+}
+#game label[for=c55] {
+  background-color: hsl(60, calc(var(--s55) * 100%), calc(30% + var(--s55) * 30%));
+}
+
+#solved {
+  opacity: calc(1 - var(--max-25));
+  margin-block: 20px;
+  font-size: 24px;
+  transition: opacity 100ms ease-out;
+}
+
+/*# sourceMappingURL=style.css.map */
