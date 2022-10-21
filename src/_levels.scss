@@ -1,6 +1,8 @@
 @use "variables" as *;
 @use "sass:math";
 
+$level-number: 10;
+
 input[type="radio"] {
 	position: absolute;
 	opacity: 0;
@@ -18,8 +20,6 @@ input[type="radio"] {
 	opacity: 0.8;
 	text-align: center;
 }
-
-$level-number: 9;
 
 @for $l from 1 through $level-number {
 	input[id="level#{$l}"]:checked ~ #game label[for="level#{$l}"] {
@@ -144,3 +144,5 @@ $level-number: 9;
 	),
 	1
 );
+
+@include create-level("level10", ((3, 3), (1, 1), (5, 5)), 0);
