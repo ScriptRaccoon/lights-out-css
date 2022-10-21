@@ -1,7 +1,7 @@
 @use "variables" as *;
 
 aside {
-	@supports (not selector(:has(*))) {
+	@supports not (selector(:has(*))) {
 		display: none;
 	}
 
