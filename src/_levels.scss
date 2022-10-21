@@ -19,7 +19,7 @@ input[type="radio"] {
 	text-align: center;
 }
 
-$level-number: 7;
+$level-number: 9;
 
 @for $l from 1 through $level-number {
 	input[id="level#{$l}"]:checked ~ #game label[for="level#{$l}"] {
@@ -119,6 +119,27 @@ $level-number: 7;
 		(4, 2),
 		(4, 4),
 		(5, 1),
+		(5, 5)
+	),
+	1
+);
+
+@include create-level(
+	"level9",
+	(
+		(1, 1),
+		(2, 1),
+		(2, 2),
+		(3, 1),
+		(3, 2),
+		(3, 3),
+		(4, 1),
+		(4, 2),
+		(4, 3),
+		(4, 4),
+		(5, 2),
+		(5, 3),
+		(5, 4),
 		(5, 5)
 	),
 	1
