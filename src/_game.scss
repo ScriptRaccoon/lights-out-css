@@ -33,6 +33,9 @@
 	// counter for lights
 	$index: 0;
 
+	// string for maximum of all states
+	$max-string: "";
+
 	// loop through all lights
 	@for $i from 1 through $size-x {
 		@for $j from 1 through $size-y {
@@ -72,20 +75,20 @@
 				}
 			}
 
+			// set the state
 			label[for="c#{$i}#{$j}"] {
 				--state: var(--s#{$i}#{$j}#{$n});
 			}
 
 			// compute the maximum of all states,
 			// game is solved when max = 0
-			@if ($index > 1) {
-				--max-#{$index}: max(
-					var(--max-#{$index - 1}),
-					var(--s#{$i}#{$j}#{$n})
-				);
+			@if ($index == 1) {
+				$max-string: "var(--s#{$i}#{$j}#{$n})";
 			} @else {
-				--max-#{$index}: var(--s#{$i}#{$j}#{$n});
+				$max-string: $max-string + ",var(--s#{$i}#{$j}#{$n})";
 			}
 		}
 	}
+
+	--max: max(#{$max-string});
 }

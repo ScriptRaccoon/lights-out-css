@@ -2,7 +2,7 @@
 
 // solved message is visible iff maximal state is 0.
 #solved {
-	opacity: calc(1 - var(--max-#{$amount}));
+	opacity: calc(1 - var(--max));
 	margin-block: 20px;
 	font-size: 24px;
 	transition: opacity 100ms ease-out;
