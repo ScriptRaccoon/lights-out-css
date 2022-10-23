@@ -21,7 +21,8 @@ input[type="radio"] {
 		background-color: #444;
 		border-radius: 3px;
 		cursor: pointer;
-		padding: 5px 10px;
+		padding-block: 5px;
+		width: 80px;
 		opacity: 0.3;
 	}
 }
