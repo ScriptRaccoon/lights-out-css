@@ -17,7 +17,7 @@ button {
 	background-color: $secondary-color;
 	padding: 5px 10px;
 	border-radius: 3px;
-	box-shadow: 0px 0px 5px #fff2;
+	box-shadow: 0px 0px 5px rgba(white, 0.1);
 	&:hover,
 	&:focus-visible {
 		filter: brightness(1.2);
