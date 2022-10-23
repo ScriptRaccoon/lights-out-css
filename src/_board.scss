@@ -9,10 +9,18 @@
 	gap: 8px;
 
 	label {
+		--state: 1;
 		transition: background-color 200ms ease;
 		border-radius: 5px;
 		cursor: pointer;
-		box-shadow: 0px 0px 10px #fff3;
+		background-color: hsl(
+			60,
+			calc(var(--state) * 100%),
+			calc(30% + var(--state) * 30%)
+		);
+		box-shadow: 0px 0px calc(var(--state) * 16px)
+				rgba($primary-color, 0.4),
+			0px 0px 5px #0005 inset;
 	}
 
 	input[type="checkbox"] {

@@ -72,23 +72,8 @@
 				}
 			}
 
-			// state = total sum modulo 2
-			--s#{$i}#{$j}: var(--s#{$i}#{$j}#{$n});
-
-			// set label color according to state,
-			// state = 0 becomes gray,
-			// state = 1 becomes yellow
 			label[for="c#{$i}#{$j}"] {
-				background-color: hsl(
-					60,
-					calc(var(--s#{$i}#{$j}) * 100%),
-					calc(30% + var(--s#{$i}#{$j}) * 30%)
-				);
-				box-shadow: 0px
-						0px
-						calc(var(--s#{$i}#{$j}) * 16px)
-						rgba($primary-color, 0.4),
-					0px 0px 5px #0005 inset;
+				--state: var(--s#{$i}#{$j}#{$n});
 			}
 
 			// compute the maximum of all states,
@@ -96,10 +81,10 @@
 			@if ($index > 1) {
 				--max-#{$index}: max(
 					var(--max-#{$index - 1}),
-					var(--s#{$i}#{$j})
+					var(--s#{$i}#{$j}#{$n})
 				);
 			} @else {
-				--max-#{$index}: var(--s#{$i}#{$j});
+				--max-#{$index}: var(--s#{$i}#{$j}#{$n});
 			}
 		}
 	}
