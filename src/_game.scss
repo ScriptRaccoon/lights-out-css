@@ -87,6 +87,11 @@
 					calc(var(--s#{$i}#{$j}) * 100%),
 					calc(30% + var(--s#{$i}#{$j}) * 30%)
 				);
+				box-shadow: 0px
+						0px
+						calc(var(--s#{$i}#{$j}) * 16px)
+						rgba($primary-color, 0.4),
+					0px 0px 5px #0005 inset;
 			}
 
 			// compute the maximum of all states,
