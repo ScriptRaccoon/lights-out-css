@@ -6,12 +6,28 @@ $level-number: 10;
 input[type="radio"] {
 	position: absolute;
 	opacity: 0;
+	scale: 0;
 	left: -100vw;
 }
 
-.levelLabel {
-	opacity: 0.8;
-	cursor: pointer;
+.levelMenu {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+
+	label {
+		background-color: #444;
+		border-radius: 3px;
+		cursor: pointer;
+		padding: 5px 10px;
+		opacity: 0.3;
+	}
+}
+
+@for $l from 1 through $level-number {
+	input[id="level#{$l}"]:checked ~ #game label[for="level#{$l}"] {
+		opacity: 1;
+	}
 }
 
 .resetHint {
@@ -19,13 +35,6 @@ input[type="radio"] {
 	font-size: 14px;
 	opacity: 0.8;
 	text-align: center;
-}
-
-@for $l from 1 through $level-number {
-	input[id="level#{$l}"]:checked ~ #game label[for="level#{$l}"] {
-		color: $main-color;
-		opacity: 1;
-	}
 }
 
 @mixin create-level($name, $coords, $val) {
